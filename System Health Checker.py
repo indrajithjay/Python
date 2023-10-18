@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as tk #import tkinter package
 import psutil
 
 # Define threshold values
@@ -25,16 +25,16 @@ def update_stats():
     else:
         alert_label.config(text='', fg='black')
 
-    root.after(1000, update_stats)
+    sys_chk.after(1000, update_stats)
 
 # Create GUI
-root = tk.Tk()
-root.title('System Monitoring Script')
+sys_chk = tk.Tk()
+sys_chk.title('System Monitoring Script')
 
-cpu_label = tk.Label(root, font=('Arial', 14))
-memory_label = tk.Label(root, font=('Arial', 14))
-disk_label = tk.Label(root, font=('Arial', 14))
-alert_label = tk.Label(root, font=('Arial', 14))
+cpu_label = tk.Label(sys_chk, font=('Arial', 14))
+memory_label = tk.Label(sys_chk, font=('Arial', 14))
+disk_label = tk.Label(sys_chk, font=('Arial', 14))
+alert_label = tk.Label(sys_chk, font=('Arial', 14))
 
 cpu_label.pack(pady=10)
 memory_label.pack(pady=10)
@@ -43,4 +43,4 @@ alert_label.pack(pady=10)
 
 update_stats()
 
-root.mainloop()
+sys_chk.mainloop()
